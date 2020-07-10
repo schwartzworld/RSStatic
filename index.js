@@ -29,9 +29,9 @@ async function getData() {
 			return newEntry;
 		});
 	});
-
+	
 	buildEntries(entries)
-	// buildIndex(entries)
+	buildIndex(entries)
 	archive(entries)
 }
 
