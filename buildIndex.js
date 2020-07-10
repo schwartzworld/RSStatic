@@ -26,7 +26,7 @@ ${buildHead({title: 'schwartz.world'})}
 </body>
 </html>
 	`
-	fs.writeFile(`./build/index.html`, indexPage, (err) => {
+	fs.writeFile(`./dist/index.html`, indexPage, (err) => {
 	  if (err) throw err;
 	  console.log('Index page built');
 	});

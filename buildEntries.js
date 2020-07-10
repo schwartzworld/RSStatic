@@ -31,7 +31,7 @@ export const buildEntries = (entries) => {
 </body>
 </html>
 	`
-		fs.writeFile(`./build${filename}`, page, (err) => {
+		fs.writeFile(`./dist${filename}`, page, (err) => {
 		  if (err) throw err;
 		});
 	})
