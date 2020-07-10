@@ -10,7 +10,6 @@ const schwartzOnly = (entry) => {
 	return entry.author[0].includes('/u/schwartz ')
 }
 
-let indexEntries = [];
 
 async function getData() {
 	const f = await axios.get('https://dev.lemmy.ml/feeds/c/schwartzworld.xml?sort=Hot')
@@ -30,8 +29,9 @@ async function getData() {
 			return newEntry;
 		});
 	});
+
 	buildEntries(entries)
-	buildIndex(entries)
+	// buildIndex(entries)
 	archive(entries)
 }
 
