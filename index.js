@@ -22,8 +22,11 @@ async function getData() {
 			newEntry.title = entry.title;
 
 			const date = new Date(entry.pubDate[0]);
-			newEntry.filename = `/pages/${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${date.getTime()}.html`;
+			newEntry.filename = `/${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${date.getTime()}.html`;
 			newEntry.link = entry.link;
+			newEntry.permalink = entry.comments;
+			newEntry.body = entry.description;
+			newEntry.type = entry.title[0].split(': ')[0]
 			return newEntry;
 		});
 	});
