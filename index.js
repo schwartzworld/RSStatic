@@ -2,10 +2,10 @@ var fs = require('fs');
 
 import axios from 'axios';
 import { parseString } from 'xml2js';
-import { buildIndex } from './src/buildIndex';
+import { buildIndex } from './src/indexPage/buildIndex';
 import { archive } from './src/archive';
-import { buildEntries } from './src/buildEntries';
-import { buildCSS } from './src/buildCSS';
+import { buildEntries } from './src/entries/buildEntries';
+import { buildCSS } from './src/scss/buildCSS';
 
 require('dotenv').config()
 

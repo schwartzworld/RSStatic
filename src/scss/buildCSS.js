@@ -7,7 +7,6 @@ export const buildCSS = () => {
         const result = sass.renderSync({
             data: styles
         });
-        console.log(result.css)
 
         fs.writeFile('./dist/css/index.css', result.css, (err) => {
             if (err) throw err;
