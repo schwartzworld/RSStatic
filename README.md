@@ -28,7 +28,6 @@ Currently, the I am manually tagging posts in their titles in order to categoriz
 
 ## TODOS:
 
-* Configure RSStatic to accept a URL as a param so it can be used with any public RSS feed
 * Improve templating to allow users more control over how their content is displayed
 * Incorporate SASS into the build process to allow custom stylesheets
 * Different templates for POST vs LINK

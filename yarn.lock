@@ -16,6 +16,11 @@ debug@=3.1.0:
   dependencies:
     ms "2.0.0"
 
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha1-l+YZJZradQ7qPk6j4mvO6lQksWo=
+
 esm@^3.2.25:
   version "3.2.25"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"

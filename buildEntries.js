@@ -1,6 +1,5 @@
 var fs = require('fs');
 import { header, buildHead } from './html'
-import { parseString } from 'xml2js';
 
 export const buildEntries = (entries) => {
 	entries.forEach(entry => {

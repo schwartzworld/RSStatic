@@ -1,4 +1,5 @@
 var fs = require('fs');
+require('dotenv').config()
 
 import axios from 'axios';
 import { parseString } from 'xml2js';
@@ -7,15 +8,15 @@ import { archive } from './archive';
 import { buildEntries } from './buildEntries';
 
 const schwartzOnly = (entry) => {
-	return entry.author[0].includes('/u/schwartz ')
+	return entry.author[0].includes(`/u/${process.env.USERNAME} `)
 }
 
 
 async function getData() {
-	const f = await axios.get('https://dev.lemmy.ml/feeds/c/schwartzworld.xml?sort=Hot')
+	const feed = await axios.get(process.env.RSS_FEED)
 	let entries;
 
-	parseString(f.data, (err, res) => {
+	parseString(feed.data, (err, res) => {
 		entries = res.rss.channel[0].item.filter(schwartzOnly).map(entry => {
 			const newEntry = {}
 			newEntry.title = entry.title;
@@ -29,7 +30,7 @@ async function getData() {
 			return newEntry;
 		});
 	});
-	
+
 	buildEntries(entries)
 	buildIndex(entries)
 	archive(entries)
