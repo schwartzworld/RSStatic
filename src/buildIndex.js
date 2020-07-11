@@ -1,5 +1,5 @@
 var fs = require('fs');
-import { header, buildHead } from './html'
+import { header, buildHead } from '../html'
 
 export const buildIndex = (entries) => {
 	const indexPage = `<!DOCTYPE html>

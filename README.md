@@ -24,7 +24,7 @@ Lemmy is an open-source Reddit alternative with plans to be (federated)[https://
 
 From there the idea was born. I created a [community of my own](https://dev.lemmy.ml/c/schwartzworld) (although this may eventually evolve into my own instance of Lemmy after it gets federated), and started work on this repo. Currently (July 10, 2020) it is very tightly coupled to my own content, but eventually my hope is to extract this into a static site generator that can be used by anybody who wants to use Lemmy (or any other RSS feed) as a backend.
 
-Currently, the I am manually tagging posts in their titles in order to categorize them. `LINK` is for other people's content, `POST` is for original content. More types may come.
+Currently, I am manually tagging posts in their titles in order to categorize them. `LINK` is for other people's content, `POST` is for original content. More types may come.
 
 ## TODOS:
 

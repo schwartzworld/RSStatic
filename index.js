@@ -1,11 +1,13 @@
 var fs = require('fs');
-require('dotenv').config()
 
 import axios from 'axios';
 import { parseString } from 'xml2js';
-import { buildIndex } from './buildIndex';
-import { archive } from './archive';
-import { buildEntries } from './buildEntries';
+import { buildIndex } from './src/buildIndex';
+import { archive } from './src/archive';
+import { buildEntries } from './src/buildEntries';
+import { buildCSS } from './src/buildCSS';
+
+require('dotenv').config()
 
 const schwartzOnly = (entry) => {
 	return entry.author[0].includes(`/u/${process.env.USERNAME} `)
@@ -15,9 +17,21 @@ const schwartzOnly = (entry) => {
 async function getData() {
 	const feed = await axios.get(process.env.RSS_FEED)
 	let entries;
+	let mostRecentArchive;
+
+	fs.readdir('./archive', function(err, items) {
+		if (err) console.log(err)
+		const mostRecent = items[items.length - 1];
+		fs.readFile(`./archive/${mostRecent}`, 'utf8', function(e, data) {
+			if (e) return console.error(e);
+			mostRecentArchive = data;
+		})
+	});
+	// compare most recent archive with current response. Don't update if they're the same
 
 	parseString(feed.data, (err, res) => {
-		entries = res.rss.channel[0].item.filter(schwartzOnly).map(entry => {
+		const { item } = res.rss.channel[0]
+		entries = item.filter(schwartzOnly).map(entry => {
 			const newEntry = {}
 			newEntry.title = entry.title;
 
@@ -31,6 +45,7 @@ async function getData() {
 		});
 	});
 
+	buildCSS()
 	buildEntries(entries)
 	buildIndex(entries)
 	archive(entries)

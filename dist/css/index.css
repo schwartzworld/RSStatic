@@ -1,37 +1,28 @@
 body {
   background: #cadeed;
-  color: #060145;
-}
+  color: #060145; }
 
 main {
-    margin: 3rem auto;
-    max-width: 800px;
-}
+  margin: 3rem auto;
+  max-width: 800px; }
 
 h1, h2 {
-  text-align: center;
-}
+  text-align: center; }
 
 a {
-  color: #016113;
-}
-
-a:visited {
-  color: #003009;
-}
+  color: #016113; }
+  a:visited {
+    color: #003009; }
 
 img {
   width: 20rem;
   height: auto;
   margin: auto;
   max-width: 100%;
-  display: block;
-}
+  display: block; }
 
 #link-info {
-  text-align: center;
-}
+  text-align: center; }
 
 strong {
-  display: block;
-}
+  display: block; }
